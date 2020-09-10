@@ -1,11 +1,12 @@
 import React from "react";
 
 import Shell from "../../hoc/Shell";
+import classStyles from "./Layout.module.css";
 
 const Layout = (props) => (
   <Shell>
     <div>Toolbar, SideDrawer, Backdrop</div>
-    <main>{props.children}</main>
+    <main className={classStyles.Content}>{props.children}</main>
   </Shell>
 );
 
