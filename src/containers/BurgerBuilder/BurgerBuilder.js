@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
 import Shell from "../../hoc/Shell";
+import Burger from "../../components/Burger/Burger";
 
 class BurgerBuilder extends Component {
   render() {
     return (
       <Shell>
-        <div>Burger</div>
+        <Burger />
         <div>Build Controls</div>
       </Shell>
     );
