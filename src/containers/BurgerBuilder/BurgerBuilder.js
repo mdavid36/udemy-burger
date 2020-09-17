@@ -45,7 +45,7 @@ class BurgerBuilder extends Component {
   };
 
   checkingOutHandler = () => {
-    this.setState({ checkingOut: true });
+    this.setState({ checkingOut: !this.state.checkingOut });
   };
 
   render() {
@@ -55,7 +55,7 @@ class BurgerBuilder extends Component {
     }
     return (
       <Shell>
-        <Modal show={this.state.checkingOut}>
+        <Modal show={this.state.checkingOut} exit={this.checkingOutHandler}>
           <OrderSummary ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
