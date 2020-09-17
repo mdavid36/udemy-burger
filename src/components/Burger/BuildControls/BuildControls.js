@@ -12,6 +12,9 @@ const controls = [
 
 const BuildControls = (props) => {
   const burgerPrice = props.price.toFixed(2);
+  const orderDisabled = !Object.keys(props.isDisabled).some(
+    (k) => !props.isDisabled[k]
+  );
   return (
     <div className={classStyles.BuildControls}>
       <p>
@@ -26,6 +29,9 @@ const BuildControls = (props) => {
           disabled={props.isDisabled[ctrl.type]}
         />
       ))}
+      <button className={classStyles.OrderButton} disabled={orderDisabled}>
+        ORDER NOW
+      </button>
     </div>
   );
 };
